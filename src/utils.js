@@ -154,14 +154,14 @@ class ArenaTemplate extends TemplateRoot {
 
   // Keyboard events managment
   setMoveEvent(arena) {
+
     document.addEventListener('keydown', (event) => {
       const keyName = event.key;
       const directions = { ArrowUp: 'N', ArrowDown: 'S', ArrowRight: 'E', ArrowLeft: 'W' };
-
       if (keyName in directions) {
           event.preventDefault();
-
           const old = arena.move(directions[keyName]);
+          console.log(old);
           this.setFightersPosition(arena, old);
       }
     });
